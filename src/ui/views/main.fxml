@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="943.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.MainController">
+   <TabPane prefHeight="610.0" prefWidth="943.0" tabClosingPolicy="UNAVAILABLE">
+      <Tab text="Books">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <fx:include fx:id="addBook" source="addBook.fxml" visible="false"/>
+            <VBox prefHeight="523.0" prefWidth="762.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0"
+                  AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <HBox prefHeight="55.0" prefWidth="762.0" spacing="9.0">
+                  <padding>
+                     <Insets bottom="9.0" top="9.0"/>
+                  </padding>
+                  <Button fx:id="addBookButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                          onAction="#addBookOpen" text="ADD BOOK" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets/>
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#refreshTable"
+                          text="REFRESH" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets/>
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                  </Button>
+                  <Button fx:id="deleteBookButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                          onAction="#deleteBook" text="DELETE BOOK" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#logout"
+                          text="LOG OUT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                     <HBox.margin>
+                        <Insets/>
+                     </HBox.margin>
+                  </Button>
+               </HBox>
+               <TableView fx:id="tableBooksView" prefHeight="526.0" prefWidth="878.0" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="bookIdCol" prefWidth="172.80001831054688" text="Book ID"/>
+                     <TableColumn fx:id="titleCol" prefWidth="283.9999694824219" text="Title"/>
+                     <TableColumn fx:id="authorCol" prefWidth="189.60003662109375" text="Author"/>
+                     <TableColumn fx:id="isbnCol" prefWidth="141.5999755859375" text="ISBN"/>
+                     <TableColumn fx:id="availabilityCol" prefWidth="145.5999755859375" text="Availability"/>
+                  </columns>
+               </TableView>
+            </VBox>
+         </AnchorPane>
+      </Tab>
+      <Tab text="Users">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <fx:include source="addUser.fxml" visible="false"/>
+            <VBox prefHeight="523.0" prefWidth="762.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0"
+                  AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <HBox prefHeight="55.0" prefWidth="762.0" spacing="9.0">
+                  <padding>
+                     <Insets bottom="9.0" top="9.0"/>
+                  </padding>
+                  <Button fx:id="addUserButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                          onAction="#addUserOpen" text="ADD USER" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets/>
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#refreshTable"
+                          text="REFRESH" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets/>
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                  </Button>
+                  <Button fx:id="deleteUserButton" maxWidth="1.7976931348623157E308"
+                          mnemonicParsing="false" onAction="#deleteUser" text="DELETE USER"
+                          HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#logout"
+                          text="LOG OUT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                     </padding>
+                     <HBox.margin>
+                        <Insets/>
+                     </HBox.margin>
+                  </Button>
+               </HBox>
+               <TableView fx:id="tableUsersView" prefHeight="526.0" prefWidth="878.0" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="userIDCol" prefWidth="172.80001831054688" text="User ID"/>
+                     <TableColumn fx:id="userNameCol" prefWidth="283.9999694824219" text="Username"/>
+                     <TableColumn fx:id="userStatusCol" prefWidth="141.5999755859375" text="Status"/>
+                  </columns>
+               </TableView>
+            </VBox>
+         </AnchorPane>
+      </Tab>
+   </TabPane>
+</AnchorPane>
